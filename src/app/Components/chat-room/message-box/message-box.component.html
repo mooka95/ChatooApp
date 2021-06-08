@@ -1,0 +1,21 @@
+
+<form style="display:flex;height:100%; width: 100%;" #messageForm='ngForm' (ngSubmit)='onSubmit(messageForm)'>
+    <div class="form-group" style="height: 100%; width: 100%;  ">
+      <input
+        style=" height: 100%; border: 2px solid #201835;"
+        type="text"
+        name="message"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="send Message"
+        #message='ngModel'
+        ngModel
+        required
+      />
+    </div>
+    <button [disabled]='!messageForm.valid' type="submit" class="btn btn-send">
+      Send
+    </button>
+  </form>
+  

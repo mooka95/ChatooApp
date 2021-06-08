@@ -1,0 +1,143 @@
+<div class="container-fluid" >
+    <div class="row"  >
+      <div class="col-lg-6"   style="
+      background-image: url(./assets/images/signup.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      max-height: 100%;
+  
+    ">
+      </div>
+  
+      <div class="col-lg-6 " style=" height:100%;" >
+        <div style="justify-content:center; display: flex;" ><img style=" margin-top: 20px;" src="./assets/images/signuplogo.png"></div>
+        <form  #userForm='ngForm' class="card-body form-group" (ngSubmit) = "onSubmitForm(userForm)"  >
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              name='userEmail'
+              #email='ngModel'
+              ngModel
+              email
+              required
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+            <div  *ngIf="email.invalid&& email.touched" class="alert alert-danger" role="alert">
+              Please enter valid email XXX@XXXX.com
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="exampleInputEmail1">User Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="userNameId"
+              name='userName'
+              aria-describedby="emailHelp"
+              placeholder="Enter User Name"
+              #userName='ngModel'
+              ngModel
+              required
+               />
+               <div  *ngIf="userName.invalid&& userName.touched" class="alert alert-danger" role="alert">
+                Please enter UserName
+              </div>
+  
+          </div>
+          <div >
+            <label for="exampleInputPassword1">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="Password"
+              name='password'
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$"
+              ngModel
+              required
+              password
+              minlength="6"
+              #password='ngModel'
+            />
+            <div  *ngIf="password.invalid&& password.touched" class="alert alert-danger" role="alert">
+              Please enter Valid Password
+            </div>
+  
+            <small>Please enter 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter</small>
+  
+          </div>
+          <div class="row" style="margin-top:20px">
+            <div class="col-6">
+              <div >
+                <label for="">Nationality</label>
+  
+                <input
+                  type="Text"
+                  class="form-control"
+                  id="nationalityId"
+                  aria-describedby="emailHelp"
+                  placeholder="Nationality"
+                  name='nationality'
+                  ngModel
+                  required
+                  #nationality='ngModel'
+                />
+                <div  *ngIf="nationality.invalid&& nationality.touched" class="alert alert-danger" role="alert">
+                  Please enter Your Nationality
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="">Date Of Birth</label>
+              <div class="form-group">
+                <div class="input-group">
+                  <input
+                    class="form-control"
+                    placeholder="yyyy-mm-dd"
+                    name="dateOfBirth"
+                    ngbDatepicker
+                    #d="ngbDatepicker"
+                    ngModel
+                    required
+                    Date
+                    #date='ngModel'
+                  />
+  
+                  <div class="input-group-append" >
+                    <button
+                      class="btn btn-outline-secondary calendar"
+                      (click)="d.toggle()"
+                      type="button"
+                    >
+                      📅
+                    </button>
+  
+                  </div>
+  
+                </div>
+                <div  *ngIf="date.invalid&& date.touched" class="alert alert-danger" role="alert">
+                  Please enter Your date Of Birth
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <p style="text-align: center">
+            <button  [disabled]="!userForm.valid" type="submit" class="btn btn-primary" style="width: 50%; border-radius: 25px;margin-top: 30px;">
+              Sign Up
+            </button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+  

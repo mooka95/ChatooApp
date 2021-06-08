@@ -1,0 +1,54 @@
+<div
+  class="container-fluid"
+  
+  style="
+    background-image: url(./assets/images/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  "
+>
+  <div
+    class="row"
+    style=" display: flex; justify-content: center"
+  >
+    <mat-card class="example-card" style="margin-top:30px">
+      <p style="text-align: center">
+        <img style="width: 40%" src="./assets/images/loginlogo.png" />
+      </p>
+
+      <mat-card-content>
+        <form class="example-form"  [formGroup]="userForm"  (ngSubmit)="onSubmit()">
+          <p>
+            <mat-form-field class="loginForm" appearance="legacy">
+              <mat-label> Email addres </mat-label>
+              <input  matInput type="email" placeholder="Ex. pat@example.com"  formControlName="email"  />
+
+            </mat-form-field>
+            <mat-hint>we will not share your email</mat-hint>
+          </p>
+          <p>
+            <mat-form-field class="loginForm" appearance="standard">
+              <mat-label>Password</mat-label>
+              <input  matInput type="password" placeholder="password"  formControlName="password"  />
+
+            </mat-form-field>
+
+          </p>
+          <p style="text-align: center; margin-top:40px">
+            <button
+            [disabled]='!userForm.valid'
+              style="width: 80%; font-size: 20px"
+              mat-raised-button
+              color="primary"
+            >
+              Login
+            </button>
+          </p>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+

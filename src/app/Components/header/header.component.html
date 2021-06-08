@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- <h2    class="navbar-brand" href="#">Chat App</h2> -->
+    <img style="max-height:10px " src="./assets/images/headerLogo.png" />
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+  
+      </ul>
+  
+    <button   *ngIf='isSignUpPage && !isLoggedIn '   routerLinkActive="active"  routerLink="/signin"  mat-raised-button color="primary"
+  >
+    Login
+  </button>
+  
+  <button     *ngIf='isSigninPage&& !isLoggedIn'  class="signUpButton" routerLinkActive="active"  routerLink="/SignUp"  mat-raised-button color="primary"
+  >
+    SignUp
+  </button>
+ 
+  <button  (click)="logout()"  *ngIf="isLoggedIn"    routerLinkActive="active"    mat-raised-button color="primary"
+  >
+   LogOut
+  </button>
+  
+    </div>
+  </nav>
+  
