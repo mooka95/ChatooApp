@@ -1,7 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { HandleMessageService } from 'src/app/Services/handle-message.service';
+import { Component, OnDestroy, OnInit ,ChangeDetectionStrategy} from '@angular/core';
 
 import { AuthGuard } from 'src/app/Services/auth.guard';
 import { AuthnticationService } from 'src/app/Services/authntication.service';
+import { Message } from 'src/app/ViewModels/message';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-chat-room',
@@ -10,8 +13,13 @@ import { AuthnticationService } from 'src/app/Services/authntication.service';
 })
 export class ChatRoomComponent implements OnInit ,OnDestroy{
 
-  constructor(private  authservice:AuthnticationService) { }
+      messagesArray:any;
+      subscription: Subscription;
+
+  constructor(private  authservice:AuthnticationService,private messageService: HandleMessageService) { }
   ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+
     alert('You Will Logout..')
     this.authservice.logOut();
   
@@ -20,6 +28,15 @@ export class ChatRoomComponent implements OnInit ,OnDestroy{
   }
 
   ngOnInit(): void {
+    
+    this.subscription=  this.messageService.getMessage().subscribe((response)=>{
+      
+      this.messagesArray=response;
+
+    },(err)=>{
+      console.log(err)
+    });
+   
   }
 
 }
