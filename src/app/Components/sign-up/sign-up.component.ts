@@ -24,11 +24,11 @@ export class SignUpComponent implements OnInit {
   }
    async onSubmitForm(userForm:NgForm){
     console.log(userForm);
-    await this.authService.signUp(userForm.value.userEmail,userForm.value.password,userForm.value.userName,userForm.value.nationality,userForm.value.dateOfBirth)
+    await this.authService.signUp(userForm.value.userEmail,userForm.value.password,userForm.value.userName,userForm.value.nationality,userForm.value.dateOfBirth,true)
     .catch((err) => {
       this.error=err.message;
       console.log(err.message)
-    })
+    });
 
     if(this.error===null){this.router.navigate(['/chatroom'])}
 

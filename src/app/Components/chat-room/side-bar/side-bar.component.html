@@ -1,12 +1,15 @@
-<div style="color:white;">sssssssssswwww</div>
-<div style="color:white;">sssssssssswwww</div>
-<div style="color:white;">sssssssssswwww</div>
-<div style="color:white;">sssssssssswwww</div>
-<div style="color:white;">sssssssssswwww</div>
-<div style="color:white;">sssssssssswwww</div>
-<div style="color:white;">sssssssssswwww</div>
-<div style="color:white;">sssssssssswwww</div>
-<div style="color:white;">sssssssssswwww</div>
-<div style="color:white;">sssssssssswwww</div>
-<div style="color:white;">sssssssssswwww</div>
-<div style="color:white;">sssssssssswwww</div>
+
+
+
+    <div  *ngFor='let user of onlineUsersList' class="user" >
+        <span class="logged-in"  *ngIf='user.status'>●</span>
+<div *ngIf='user.status' class="userName">{{user.userName}}</div>
+
+
+</div>
+
+
+
+
+
+

@@ -1,11 +1,15 @@
+
+
 export class Message {
     contentOfMessage:string;
     timeOfMessage:string;
-    sender:string;
-    constructor(contentOfMessage:string, sender:string,timeOfMessage:string){
+    senderId:string;
+    senderMail:string
+    constructor(contentOfMessage:string, senderId:string,timeOfMessage:string,sender:string){
       this.contentOfMessage=contentOfMessage;
-      this.sender=sender;
+      this.senderId=senderId;
       this.timeOfMessage=timeOfMessage;
+      this.senderMail=sender;
   
     }
 }

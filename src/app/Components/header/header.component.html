@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <!-- <h2    class="navbar-brand" href="#">Chat App</h2> -->
-    <img style="max-height:10px " src="./assets/images/headerLogo.png" />
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-dark ">
+ 
+    
+    <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
@@ -9,13 +9,14 @@
       <ul class="navbar-nav mr-auto">
   
       </ul>
+      <div style="margin-right: 10px; font-size:  1.2vw;  text-decoration-line: underline;;" *ngIf='isLoggedIn' >{{userEmail}}</div>
   
-    <button   *ngIf='isSignUpPage && !isLoggedIn '   routerLinkActive="active"  routerLink="/signin"  mat-raised-button color="primary"
+    <button  class='headBtn'   *ngIf='isSignUpPage && !isLoggedIn '   routerLinkActive="active"  routerLink="/signin"  mat-raised-button color="primary"
   >
     Login
   </button>
   
-  <button     *ngIf='isSigninPage&& !isLoggedIn'  class="signUpButton" routerLinkActive="active"  routerLink="/SignUp"  mat-raised-button color="primary"
+  <button       *ngIf='isSigninPage&& !isLoggedIn'  class="signUpButton" routerLinkActive="active"  routerLink="/SignUp"  mat-raised-button color="primary"
   >
     SignUp
   </button>

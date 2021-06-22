@@ -1,0 +1,27 @@
+.logged-in {
+    color: green;
+    
+  }
+  .user{
+    display: flex;
+ 
+    color: #A098A5;
+    background-color: #201835;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius: 8px;
+    transition: ease-in 0.2s;
+    margin-top: 20px;
+    font-size: 1.2vw;
+    line-height: 30px;
+    padding: 10px;
+    
+    
+}
+.userName{
+    padding-left: 10px;
+}
+.user:hover{
+    background-color: #453968;
+    color: #ddd;
+    transition: ease-in 0.1s;
+}

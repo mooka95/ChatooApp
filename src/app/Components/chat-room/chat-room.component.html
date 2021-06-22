@@ -1,24 +1,24 @@
-<div class="container-fluid" >
-  <div class="row chat-space">
-      <div class="col-3 usersList"  >
-        <app-side-bar ></app-side-bar>
-      </div>
-      <div class="col-9 chatBody overflow-auto">
-        <div class="message-box" *ngFor='let message of  messagesArray'>
-          <div class="name-section">
-            <div>{{message.payload.doc.data().sender}}</div>
-            <div>{{message.payload.doc.data().timeOfMessage}}</div>
-          </div>
-          <div class="message-section" >{{message.payload.doc.data().contentOfMessage}}</div>
-
+<div class="container-fluid">
+  <div class="row chat-space" >
+    <div class="col-2 usersList" >
+      <app-side-bar></app-side-bar>
+    </div>
+    <div class="col-10 chatBody" >
+      <div class="message-box row" *ngFor="let message of messagesArray">
+        <div class="name-section col-3">
+          <div>{{ message.payload.doc.data().senderMail }}</div>
+          <div>{{ message.payload.doc.data().timeOfMessage }}</div>
         </div>
-
-
-
-
+        <div class="message-section col-8">
+          {{ message.payload.doc.data().contentOfMessage }}
+        </div>
       </div>
-
+    </div>
   </div>
-  <div class="row message-box" style="height: 10%;margin-top: 3px;padding-left: 10px"><app-message-box  style="width:100%;"></app-message-box></div>
-  
+  <div
+    class="row message-box"
+    style="height: 5%; margin-top: 30px; padding-left: 10px"
+  >
+    <app-message-box style="width: 100%"></app-message-box>
+  </div>
 </div>

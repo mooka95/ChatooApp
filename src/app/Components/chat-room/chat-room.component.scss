@@ -3,24 +3,25 @@
     padding-left:0  ;
     margin-right:auto;
     margin-left:auto;
-    height:92.5%;
+    height:93%;
   }
   .usersList{
     background-color: #201835;
   }
   .chat-space{
-    height: 90%;
+    height: 85%;
   
   }
   .chatBody{
     background-image:  linear-gradient(181deg,rgba(100,200,255,0.6), rgba(0, 0, 0, 0.9) )  ,url(../../../assets/images/bg-chat-app.jpg);
+    overflow-y: scroll; height:100%;
+   
   }
   .message-box{
     display: flex;
     margin-top: 10px;
- 
-    background-color: #eee;
-    
+   
+    padding-left: 20px;
   }
   .name-section{
 
@@ -28,17 +29,16 @@
     background-color: #01579B;
     width: 20%;
     text-align: center;
-    font-size: smaller;
+    font-size: 1em;
+    overflow-wrap: break-word; //to make t ext not going out of its container 
 
   }
   .message-section{
  
-   
-    // background-color: #eee;
+    
+    background-color: #eee;
     padding-left: 20px;
-    display: block;
-
- 
+    overflow-wrap: break-word; //to make t ext not going out of its container 
 
   }
 

@@ -13,20 +13,32 @@ export class HeaderComponent   {
   isSigninPage: boolean=false;
   isSignUpPage: boolean=false;
   isLoggedIn: boolean=false;
-  user:User;
+  userEmail:string='';
 
 
 
   constructor(private authService: AuthnticationService,private router: Router) {
+ 
+
+
 
   }
  
 
   ngDoCheck(): void {
+
+   
     
     if(localStorage.getItem('authObject')){
+
+  
       this.isLoggedIn=true;
-      this.user=this.authService.getUser();
+      this.userEmail=localStorage.getItem('email')
+
+      
+
+    
+
       }
       if(location.pathname==='/signin'){
         this.isSigninPage=true;
@@ -55,5 +67,7 @@ export class HeaderComponent   {
     this.router.navigate(['/signin']);
 
   }
+
+
 
 }
